@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+var router = require('express').Router();
+var dogsCtrl = require('../controllers/dogs');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+  }
+
+router.get('/', dogsCtrl.index);
 
 module.exports = router;

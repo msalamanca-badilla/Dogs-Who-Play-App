@@ -13,7 +13,6 @@ passport.use(new GoogleStrategy({
       if (dog) {
         return cb(null, dog);
       } else {
-        // we have a new student via OAuth!
         var newDog = new Dog({
           name: profile.displayName,
           email: profile.emails[0].value,
@@ -28,8 +27,8 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-passport.serializeUser(function(dog, done) { //PASSPORT
-    done(null, dog.id);//STUDENT.ID REFERS TO THE MONGOOSE DATABASE
+passport.serializeUser(function(dog, done) {
+    done(null, dog.id);
   });
   
   passport.deserializeUser(function(id, done) {
