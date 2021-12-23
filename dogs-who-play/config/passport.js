@@ -28,4 +28,14 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+passport.serializeUser(function(dog, done) { //PASSPORT
+    done(null, dog.id);//STUDENT.ID REFERS TO THE MONGOOSE DATABASE
+  });
+  
+  passport.deserializeUser(function(id, done) {
+    Dog.findById(id)
+      .then((dog) => done(dog))
+      .catch(err => done(err,null));
+  });
+
 
