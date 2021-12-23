@@ -1,34 +1,27 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>DOGS WHO PLAY</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>DOGS WHO PLAY</h1>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>DOGS WHO PLAY</title>
-  <!-- Google Icon Fonts used by Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-
 <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">DOGS WHO PLAY</a>
-        <ul class="right">
+
+
+  <nav class="navbar">
+      <ul>
+        <li>
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form>
+        <ul>
           <li>
           <% if (user) { %>
             <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
@@ -37,9 +30,11 @@
           <% } %>
           </li>
         </ul>
-      </div>
-    </nav>
-  </div>
+      </form>
+  </nav>
+
+
+
   <div class="container">
     <div id="search-row" class="row">
       <h2 class="col s4 blue-grey-text text-darken-2">DOGS</h2>

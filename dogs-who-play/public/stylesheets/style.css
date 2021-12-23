@@ -4,5 +4,12 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+}
+
+li{
+  list-style: none;
+}
+nav a{
+  text-decoration: none;
 }
