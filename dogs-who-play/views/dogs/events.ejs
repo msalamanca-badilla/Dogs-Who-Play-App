@@ -1,3 +1,22 @@
 <%- include('../partials/header') %>
 
+<h1>CREATE AN EVENT</h1>
+<form action ='/events' method='POST'>
+    <label>NAME OF EVENT
+        <input type = 'text' name = 'eventName'>
+    </label>
+    <br>
+    <label>ADD DESCRIPTION
+        <input type = 'text' name = 'addDescription'>
+    </label>
+    <br>
+    <label>Date
+        <input type="datetime-local" min = '2021-12-01T00:00'> 
+    </label>
+        <br>
+    <input type="submit" value="CREATE EVENT" class = 'button'>
+</form>
+
+
+
 <%- include('../partials/footer') %>
