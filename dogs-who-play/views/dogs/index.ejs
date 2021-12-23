@@ -22,12 +22,15 @@
         <li>
           <a class="nav-link" href="#">FRIENDS</a>
         </li>
+        <li>
+          <a class="nav-link" href="#">MY PROFILE</a>
+        </li>
       </ul>
       <form>
         <ul>
           <li>
           <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+            <a class = 'google' href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
           <% } else { %>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
           <% } %>
@@ -40,13 +43,11 @@
 
   <div class="container">
     <div id="search-row" class="row">
-      <h2 class="col s4 blue-grey-text text-darken-2">DOGS</h2>
       <form action="/dogs" method="GET">
         <div class="col s3 offset-s3">
           <!-- search -->
           <div class="input-field">
             <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
-            <i class="material-icons">close</i>
           </div>
         </div>
         <div class="col s2">
@@ -56,18 +57,12 @@
     <div class="row">
       <div id="dogs" class="col s12">
         <% dogs.forEach(function(dog) { %>
-          <div class="card blue-grey">
-            <div class="card-content white-text">
-              <div>
-                <span class="card-title">
+              <div class = 'profile'>
                   <i class="small material-icons">perm_identity</i>
                   <span class="dog-name"><%= dog.name %></span>
-                </span>
               </div>
                 <div class="card-action"></div>
-                </div>
-            </div>
-          </div>
+        </div>
         <% }) %>
       </div>
     </div>
