@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
-      <form class = 'google'>
+  <nav class = 'google'>
+      <form>
         <ul>
-          <li>
+          <li class = 'nav-link'>
           <% if (user) { %>
             <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
           <% } else { %>
@@ -13,20 +14,8 @@
   </nav>
 
 
-
+  
   <div class="container">
-    <div id="search-row" class="row">
-      <form action="/dogs" method="GET">
-        <div class="col s3 offset-s3">
-          <!-- search -->
-          <div class="input-field">
-            <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
-          </div>
-        </div>
-        <div class="col s2">
-        </div>
-      </form>
-    </div>
     <div class="row">
       <div id="dogs" class="col s12">
         <% dogs.forEach(function(dog) { %>

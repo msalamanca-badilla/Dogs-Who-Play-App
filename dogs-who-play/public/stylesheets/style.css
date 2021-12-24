@@ -8,7 +8,7 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 75px 1fr 1fr 1fr 1fr;
+  grid-template-rows: 75px 75px 1fr 1fr 1fr;
 }
 
 nav{
@@ -36,11 +36,27 @@ a {
   font-weight: bold;
 }
 
+/* div.input-field{
+
+} */
+
+div.side-nav{
+  grid-row-start: 3;
+  grid-row-end: 4; 
+}
+
+ul.breeds{
+  list-style: none;
+  display: inline;
+}
+
 li#main{
+  list-style: none;
+  display: inline;
   margin: 0 400px 0 0;
 }
 
-li{
+li.nav-link{
   list-style: none;
   display: inline;
   margin: 0 0 0 20px;
@@ -48,10 +64,6 @@ li{
 
 nav a{
   text-decoration: none;
-}
-
-div.input-field{
-  margin: 0 0 0 50px;
 }
 
 .profile{
@@ -66,3 +78,4 @@ div.input-field{
   justify-self: start;
   margin: 0 120px 0 0;
 }
+
