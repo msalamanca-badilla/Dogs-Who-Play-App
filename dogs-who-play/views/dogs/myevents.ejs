@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th name ='Event Name' width = '100px'>Event Name</th>
+      <th name ='Add Description' width = '100px'>Description</th>
       <th name ='Date'width = '100px'>Date</th>
       <th>Details</th>
     </tr>
@@ -13,7 +14,8 @@
   <tbody>
     <% events.forEach(function(e){%>
         <tr>
-          <td><%= e.nameOfEvent %></td>
+          <td><%= e.eventName %></td>
+          <td><%= e.addDescription %></td>
           <td><%= e.dateOfEvent %></td>
         </tr>
     <%});%>
