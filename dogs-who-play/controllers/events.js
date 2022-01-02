@@ -7,7 +7,11 @@ function newEvent(req, res,next) {
 }
 
 function create(req,res,next) {
-    const event = req.body.event
+    const event = new Event(req.body);
+    event.save(function(err){
+        if(err) return res.redirect('/dogs/event');
+        res.redirect('/dogs');
+    })
 }
 
 module.exports = {
