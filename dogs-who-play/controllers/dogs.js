@@ -13,11 +13,8 @@ function index(req, res, next) {
     });
   }
 
-function show(req,res,next){
-  res.render('dogs/myevents');
-};
+
 
   module.exports = {
       index,
-      show,
   }

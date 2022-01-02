@@ -7,7 +7,6 @@ function isLoggedIn(req, res, next) {
   }
 
 router.get('/', dogsCtrl.index);
-router.get('/myevents', dogsCtrl.show);
 
 
 module.exports = router;

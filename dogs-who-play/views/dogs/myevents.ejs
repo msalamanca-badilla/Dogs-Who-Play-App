@@ -1,5 +1,24 @@
 <%- include('../partials/header') %>
 
-<h1>hi</h1>
+<h1>My Events</h1>
+<form action ='/events' method='POST'></form>
+<table width ='600px'>
+  <thead>
+    <tr>
+      <th name ='Event Name' width = '100px'>Event Name</th>
+      <th name ='Date'width = '100px'>Date</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% events.forEach(function(e){%>
+        <tr>
+          <td><%= e.nameOfEvent %></td>
+          <td><%= e.dateOfEvent %></td>
+        </tr>
+    <%});%>
+  </tbody>
+</table>
+</form>
 
 <%- include('../partials/footer') %>
