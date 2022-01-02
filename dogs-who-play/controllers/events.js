@@ -22,8 +22,15 @@ function show(req,res,next){
     })
   };
 
+  function index(req,res,next){
+      Event.findById(req.params.id, function(err, event){
+        res.render('dogs/idevent', {event})
+      })
+  }
+
 module.exports = {
     new: newEvent,
     create,
-    show
+    show,
+    index
 }
