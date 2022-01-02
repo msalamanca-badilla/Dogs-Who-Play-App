@@ -29,16 +29,12 @@ nav{
   grid-row-end: 4; 
 }
 
-a {
+a{
   color: black;
   display: inline;
   text-decoration: none;
   font-weight: bold;
 }
-
-/* div.input-field{
-
-} */
 
 div.side-nav{
   grid-row-start: 3;
@@ -77,5 +73,16 @@ nav a{
   text-decoration: none;
   justify-self: start;
   margin: 0 120px 0 0;
+}
+
+.event{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+}
+
+label{
+  margin: 10px 0 10px 0;
 }
 
