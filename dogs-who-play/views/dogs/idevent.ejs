@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1><%= event.eventName %></h1>
-<h3><%= event.dateOfEvent %></h3>
+<p class = 'eventdate'><em><%= event.dateOfEvent %></em></p>
+<p class = 'location'><em>Location: <%= event.eventLocation %></em></p>
 
 <%- include('../partials/footer') %>
