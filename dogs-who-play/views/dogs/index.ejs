@@ -19,12 +19,13 @@
       <div id="dogs" class="col s12">
         <% dogs.forEach(function(dog) { %>
               <div class = 'profile'>
+                <% if (user) { %>
                   <i class="small material-icons">perm_identity</i>
                   <span class="dog-name"><%= dog.name %></span>
+                  <% } else { %>
+                    <span class="dog-name"></span>
               </div>
-                <div class="card-action"></div>
-        </div>
-        <% }) %>
+        <% }}) %>
       </div>
   </div>
 <%- include('../partials/footer') %>
