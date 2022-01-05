@@ -8,8 +8,12 @@ const eventSchema = new mongoose.Schema({
         type: Date,
         default(){
             return new Date().getFullYear();
-            }
+        }
+    },
+    },
+    {
+        timestamp: true,
     }
-});
+);
 
 module.exports = mongoose.model('Event', eventSchema);

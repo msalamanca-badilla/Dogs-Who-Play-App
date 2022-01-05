@@ -2,6 +2,10 @@ var express = require('express');
 var router = require('express').Router();
 const passport = require('passport');
 
+router.get('/', function(req,res){
+  res.redirect('/dogs')
+})
+
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }
@@ -17,11 +21,7 @@ router.get('/oauth2callback', passport.authenticate(
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/dogs');
+  res.redirect('/events/myevents');
 });
-
-router.get('/', function(req,res){
-  res.redirect('/dogs')
-})
 
 module.exports = router;

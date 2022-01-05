@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <div id="dogs" class="col s12">
+      <% dogs.forEach(function(dog) { %>
+            <div class = 'profile'>
+                <i class="small material-icons">perm_identity</i>
+                <span class="dog-name"><%= dog.name %></span>
+            </div>
+              <div class="card-action"></div>
+      </div>
+      <% }) %>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
