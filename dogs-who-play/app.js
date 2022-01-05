@@ -17,6 +17,7 @@ var indexRouter = require('./routes/index');
 var dogsRouter = require('./routes/dogs');
 var eventsRouter = require('./routes/events');
 var profilesRouter = require('./routes/profiles');
+var friendsRouter = require('./routes/friends');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +40,7 @@ app.use('/', indexRouter);
 app.use('/dogs', dogsRouter);
 app.use('/events', eventsRouter);
 app.use('/profiles', profilesRouter);
+app.use('/friends', friendsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

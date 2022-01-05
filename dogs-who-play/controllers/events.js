@@ -21,9 +21,13 @@ function show(req,res,next){
   };
 
 function index(req,res,next){
-    Event.findById(req.params.id, function(err, event){
-        res.render('dogs/idevent', {event})
-    })
+    const event = req.body.event;
+    req.user.events.push({event})
+
+    req.user
+    .save()
+    .then((dog) => res.redirect('/events/myevents'))
+    .catch((err) => res.redirect('/events/myevents'));
   }
 
 function deleteEvent(req,res,next){
