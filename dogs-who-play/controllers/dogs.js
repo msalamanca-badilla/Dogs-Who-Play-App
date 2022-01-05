@@ -9,7 +9,6 @@ function index(req, res, next) {
     Dog.find(modelQuery)
     .sort(sortKey).exec(function(err, dogs) {
       if (err) return next(err);
-        console.log(req.user)
       res.render('dogs/index', { 
         user: req.user, 
         dogs, 

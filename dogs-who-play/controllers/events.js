@@ -21,14 +21,10 @@ function show(req,res,next){
   };
 
 function index(req,res,next){
-    const event = req.body.event;
-    req.user.events.push({event})
-
-    req.user
-    .save()
-    .then((dog) => res.redirect('/events/myevents'))
-    .catch((err) => res.redirect('/events/myevents'));
-  }
+    Event.findById(req.params.id, function(err, event){
+      res.render('dogs/idevent', {event})
+    })
+}
 
 function deleteEvent(req,res,next){
     const id = req.params.id;
