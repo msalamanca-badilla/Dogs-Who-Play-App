@@ -8,9 +8,14 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK,
   },
   function(accessToken, refreshToken, profile, cb) {
+    console.log('profile',profile)
     Dog.findOne({ 'googleId': profile.id }, function(err, dog) {
-      if (err) return cb(err);
+      if (err){
+        console.log('error find dog',err)
+        return cb(err)
+      }
       if (dog) {
+        console.log('dog exists',dog)
         return cb(null, dog);
       } else {
         var newDog = new Dog({
@@ -28,12 +33,14 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.serializeUser(function(dog, done) {
+    console.log('serialize dog', dog)
     done(null, dog.id);
   });
   
   passport.deserializeUser(function(id, done) {
+    console.log('deserialize dog', id)
     Dog.findById(id)
-      .then((dog) => done(dog))
+      .then((dog) => done(null,dog))
       .catch(err => done(err,null));
   });
 

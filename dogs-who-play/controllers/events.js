@@ -18,19 +18,30 @@ function create(req,res,next) {
 
 function show(req,res,next){
     Event.find({}, function(err,events){
+        if(err){
+            console.log("error",err)
+        }
       res.render('dogs/myevents', {events});
     })
   };
 
-  function index(req,res,next){
-      Event.findById(req.params.id, function(err, event){
+function index(req,res,next){
+    Event.findById(req.params.id, function(err, event){
         res.render('dogs/idevent', {event})
-      })
+    })
   }
+
+function deleteEvent(req,res,next){
+    const id = req.params.id;
+    Event.delete(id)
+        res.redirect('/events/myevents');
+    
+}
 
 module.exports = {
     new: newEvent,
     create,
     show,
-    index
+    index,
+    delete: deleteEvent
 }
