@@ -20,9 +20,15 @@ function show(req,res,next){
     })
   };
 
+function index(req,res,next){
+    Profile.findById(req.params.id, function(err, profile){
+        res.render('dogs/iddog', {profile})
+      })
+}
 
 module.exports = {
     create,
     newDog,
-    show
+    show,
+    index
 }
