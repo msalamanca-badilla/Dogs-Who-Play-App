@@ -1,4 +1,29 @@
-<%- include('../partials/header') %>
+<%- include('../partials/headertwo') %>
 
+<h1>MY DOGS</h1>
+<button><a href = '/profiles/adddog'>ADD DOG</a></button>
+
+<form action ='/profiles' method='POST'></form>
+<table class = 'dogtable' width ='600px'>
+  <thead>
+    <tr class = 'doghead'>
+      <th name ='Name of Dog' width = '100px'>Dog Name</th>
+      <th name ='Location' width = '100px'>Location</th>
+      <th name ='Age' width = '100px'>Age</th>
+      <th name ='Breed'width = '100px'>Breed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% profiles.forEach(function(p){%>
+        <tr>
+          <td><%= p.dogName %></td>
+          <td><%= p.location %></td>
+          <td><%= p.dogAge %></td>
+          <td><%= p.breed %></td>
+        </tr>
+    <%});%>
+  </tbody>
+</table>
+</form>
 
 <%- include('../partials/footer') %>

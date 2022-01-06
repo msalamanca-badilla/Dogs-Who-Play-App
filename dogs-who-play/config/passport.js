@@ -8,27 +8,25 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK,
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log('profile',profile)
-    Dog.findOne({ 'googleId': profile.id }, function(err, dog) {
-      if (err){
-        return cb(err)
-      }
+
+    Dog.findOne({ googleId: profile.id })
+    .then((dog) => {
       if (dog) {
-        return cb(null, dog);
-      } else {
-        var newDog = new Dog({
-          name: profile.displayName,
-          email: profile.emails[0].value,
-          googleId: profile.id
-        });
-        newDog.save(function(err) {
-          if (err) return cb(err);
-          return cb(null, newDog);
-        });
+        return dog;
       }
-    });
-  }
-));
+
+      return Dog.create({
+        name: profile.displayName,
+        email: profile.emails[0].value,
+        googleId: profile.id,
+      });
+    })
+    .then((dog) => cb(null, dog))
+    .catch((err) => cb(err, null));
+    }
+  )
+);
+
 
 passport.serializeUser(function(dog, done) {
     done(null, dog.id);

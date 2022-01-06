@@ -1,18 +1,26 @@
 const app = require("../app");
-const Event = require('../models/event');
-
+const Dog = require('../models/dog');
+const Event = require('../models/dog');
 
 function newEvent(req, res,next) {
     res.render('dogs/events')
 }
 
+// function create(req,res,next) {
+//     const event = new Event(req.body);
+//     event.save(function(err){
+//         console.log({event})
+//         if(err) return res.redirect('dogs/events');
+//         res.redirect('/events/myevents');
+//     })
+// }
+
 function create(req,res,next) {
-    const event = new Event(req.body);
-    event.save(function(err){
-        if(err) return res.redirect('dogs/events');
-        res.redirect('/events/myevents');
-    })
-}
+    req.user.events.push(req.body);
+    req.user.save(function(err){
+        res.redirect('/events/myevents')
+    })    
+};
 
 function show(req,res,next){
     Event.find({}, function(err,events){
