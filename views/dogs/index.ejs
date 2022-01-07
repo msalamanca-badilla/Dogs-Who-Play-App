@@ -1,0 +1,21 @@
+<%- include('../partials/headerone') %>
+  <nav class = 'google'>
+      <form>
+        <ul>
+          <li class = 'nav-link'>
+          <% if (user) { %>
+            <a href="/logout">Log Out</a>
+          <% } else { %>
+            <a href="/auth/google">Login with Google</a>
+          <% } %>
+          </li>
+        </ul>
+      </form>
+  </nav>
+
+  <div class = 'rectangle'><img src = 'images/bull-terrier-playing.jpeg' class ='dogplaying'><div class = 'summary'>
+    <h1>Dog Meetups</h1>
+      <p>Meet up with other dogs in your area. Find similar breeds in your city then set up play dates or events!</p>
+  </div></div>
+
+<%- include('../partials/footer') %>
