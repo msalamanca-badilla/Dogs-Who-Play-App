@@ -9,8 +9,8 @@ function isLoggedIn(req, res, next) {
 	
 router.get('/new', eventsCtrl.new);
 router.post('/', isLoggedIn, eventsCtrl.create);
-router.get('/myevents', eventsCtrl.show);
-router.get('/:id', eventsCtrl.index);
+router.get('/myevents', eventsCtrl.myEvents);
+router.get('/:id', eventsCtrl.show);
 router.delete('/:id', eventsCtrl.delete);
 	
 module.exports = router;

@@ -1,23 +1,19 @@
 const app = require("../app");
-const Profile = require('../models/profile');
+const Profile = require('../models/dog');
 
 function newDog(req,res,next){
     res.render('dogs/newdog')
 }
 
 function create(req,res,next){
-    const profile = new Profile(req.body);
-    profile.save(function(err){
-        console.log({profile})
-        if(err) return res.redirect('/profiles');
-        res.redirect('/profiles');
-    })
+    req.user.profile.push(req.body);
+    req.user.save(function(err) {
+      res.redirect('/profiles');
+    });
 }
 
-function show(req,res,next){
-    Profile.find({}, function(err,profiles){
-      res.render('dogs/profiles', {profiles});
-    })
+function myDogs(req,res,next){
+      res.render('dogs/profiles');
   };
 
 function index(req,res,next){
@@ -29,6 +25,6 @@ function index(req,res,next){
 module.exports = {
     create,
     newDog,
-    show,
+    myDogs,
     index
 }

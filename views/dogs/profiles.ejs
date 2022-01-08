@@ -13,8 +13,9 @@
       <th name ='Breed'width = '100px'>Breed</th>
     </tr>
   </thead>
+  <% if (dog._id.equals(dog && dog._id)) { %>
   <tbody>
-    <% profiles.forEach(function(p){%>
+    <% dog.profile.forEach(function(p){%>
         <tr>
           <td><a href = '/profiles/<%=p._id%>'><%= p.dogName %></a></td>
           <td><%= p.location %></td>
@@ -23,6 +24,7 @@
         </tr>
     <%});%>
   </tbody>
+  <%};%>
 </table>
 </form>
 

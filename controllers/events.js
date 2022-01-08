@@ -12,12 +12,11 @@ function create(req,res,next) {
     });
   }
 
-function show(req,res,next){ //rename to myEvents
+function myEvents(req,res,next){ //rename to myEvents
       res.render('dogs/myevents');
-
   };
 
-function index(req,res,next){ //rename to dogs/:id, dog show page
+function show(req,res,next){ //rename to dogs/:id, dog show page
     Dog.findById(req.params.id, function(err, event){
         console.log({event})
       res.render('dogs/idevent', {event})
@@ -38,8 +37,8 @@ function deleteEvent(req,res,next){
 module.exports = {
     new: newEvent,
     create,
+    myEvents,
     show,
-    index,
     delete: deleteEvent
 }
 

@@ -15,10 +15,18 @@ const eventSchema = new mongoose.Schema({
   }
 );
 
+const profileSchema = new mongoose.Schema({
+  dogName: String,
+  dogAge: Number,
+  location: String,
+  breed: String,
+});
+
 const dogSchema = new mongoose.Schema({
     name: String,
     email: String,
     events: [eventSchema],
+    profile: [profileSchema],
     googleId: String
   }, {
     timestamps: true
