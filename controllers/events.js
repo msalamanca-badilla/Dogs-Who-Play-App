@@ -1,7 +1,5 @@
 const app = require("../app");
 const Dog = require('../models/dog');
-// const Event = require('../models/dog');
-// const Event = require('../models/event');
 
 function newEvent(req, res,next) {
     res.render('dogs/events')
@@ -14,17 +12,22 @@ function create(req,res,next) {
     });
   }
 
-function show(req,res,next){
-    Dog.find({}, function(err,dog){
-      res.render('dogs/myevents', {dog});
-    })
+function show(req,res,next){ //rename to myEvents
+      res.render('dogs/myevents', {dog: req.user});
+
   };
 
-function index(req,res,next){
-    Dog.findById(req.params.id, function(err, dog){
-      res.render('dogs/idevent', {dog})
+function index(req,res,next){ //rename to dogs/:id, dog show page
+    Dog.findById(req.params.id, function(err, event){
+        console.log({event})
+      res.render('dogs/idevent', {event})
     })
 }
+
+//create index function /dogs route,
+// Dog.find({}, function(err,dogs){ <- gets all dogs
+    //   res.render('dogs/index', {dogs});
+    // })
 
 function deleteEvent(req,res,next){
     const id = req.params.id;
