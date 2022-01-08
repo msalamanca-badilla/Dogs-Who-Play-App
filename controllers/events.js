@@ -12,21 +12,21 @@ function create(req,res,next) {
     });
   }
 
-function myEvents(req,res,next){ //rename to myEvents
+function myEvents(req,res,next){
       res.render('dogs/myevents');
   };
 
-function show(req,res,next){ //rename to dogs/:id, dog show page
-    Dog.findById(req.params.id, function(err, event){
-        console.log({event})
-      res.render('dogs/idevent', {event})
-    })
-}
+function show(req,res,next){
+        req.user.events.findById(req.params.id, function(err, event){
+            res.render('dogs/idevent', {event}) 
+        })
+    }
 
-//create index function /dogs route,
-// Dog.find({}, function(err,dogs){ <- gets all dogs
-    //   res.render('dogs/index', {dogs});
-    // })
+function index(req,res,next){
+    Dog.find({}, function(err,events){
+        res.render('dogs/allevents', {events});
+        })
+}
 
 function deleteEvent(req,res,next){
     const id = req.params.id;
@@ -39,7 +39,8 @@ module.exports = {
     create,
     myEvents,
     show,
-    delete: deleteEvent
+    delete: deleteEvent,
+    index
 }
 
 // 61d63e74d52b64ae7029de5f

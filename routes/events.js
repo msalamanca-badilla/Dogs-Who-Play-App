@@ -12,5 +12,6 @@ router.post('/', isLoggedIn, eventsCtrl.create);
 router.get('/myevents', eventsCtrl.myEvents);
 router.get('/:id', eventsCtrl.show);
 router.delete('/:id', eventsCtrl.delete);
+router.get('/', eventsCtrl.index);
 	
 module.exports = router;
