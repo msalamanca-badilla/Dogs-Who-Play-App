@@ -13,7 +13,7 @@ function create(req,res,next) {
   }
 
 function show(req,res,next){ //rename to myEvents
-      res.render('dogs/myevents', {dog: req.user});
+      res.render('dogs/myevents');
 
   };
 
