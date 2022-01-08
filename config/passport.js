@@ -22,7 +22,7 @@ passport.use(new GoogleStrategy({
       });
     })
     .then((dog) => cb(null, dog))
-    .catch((err) => cb(err, null));
+    .catch((err) => cb(err));
     }
   )
 );

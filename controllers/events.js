@@ -1,46 +1,34 @@
 const app = require("../app");
-// const Dog = require('../models/dog');
-const Event = require('../models/event');
+const Dog = require('../models/dog');
+// const Event = require('../models/dog');
+// const Event = require('../models/event');
 
 function newEvent(req, res,next) {
     res.render('dogs/events')
 }
 
-// function create(req,res,next) {
-//     const event = new Event(req.body);
-//     event.save(function(err){
-//         console.log({event})
-//         if(err) return res.redirect('dogs/events');
-//         res.redirect('/events/myevents');
-//     })
-// }
-
 function create(req,res,next) {
-    const event = new Event(req.body);
-    event.save(function(err){
-        console.log('saved')
-        console.log({event})
-        if(err) return res.redirect('dogs/events');
-        res.redirect('/events/myevents');  
-    })
-};
-
+    req.user.events.push(req.body);
+    req.user.save(function(err) {
+      res.redirect('/events/myevents');
+    });
+  }
 
 function show(req,res,next){
-    Event.find({}, function(err,events){
-      res.render('dogs/myevents', {events});
+    Dog.find({}, function(err,dog){
+      res.render('dogs/myevents', {dog});
     })
   };
 
 function index(req,res,next){
-    Event.findById(req.params.id, function(err, event){
-      res.render('dogs/idevent', {event})
+    Dog.findById(req.params.id, function(err, dog){
+      res.render('dogs/idevent', {dog})
     })
 }
 
 function deleteEvent(req,res,next){
     const id = req.params.id;
-    Event.delete(id)
+    Dog.delete(id)
         res.redirect('/events/myevents');
 }
 
@@ -51,3 +39,7 @@ module.exports = {
     index,
     delete: deleteEvent
 }
+
+// 61d63e74d52b64ae7029de5f
+
+// dog[0].events[0].eventName

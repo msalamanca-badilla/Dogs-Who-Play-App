@@ -13,6 +13,27 @@
       </form>
   </nav>
 
+  <div id="dogs" class="col s12">
+    <% dogs.forEach(function(dog) { %>
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+          <div>
+            <span class="card-title">
+              <% if (user) { %>
+              <i class="small material-icons">perm_identity</i>
+              <span class="dog-name"><%= dog.name %></span>
+              <% } else { %>
+              <% } %>
+              <span class="dog-name"></span>
+            </span>
+          </div>
+            <div class="card-action"></div>
+            </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
   <div class = 'rectangle'><img src = 'images/bull-terrier-playing.jpeg' class ='dogplaying'><div class = 'summary'>
     <h1>Dog Meetups</h1>
       <p>Meet up with other dogs in your area. Find similar breeds in your city then set up play dates or events!</p>

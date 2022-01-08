@@ -13,15 +13,15 @@
     </tr>
   </thead>
   <tbody>
-    <% events.forEach(function(e){%>
-        <tr>
-          <td><%= e.eventName %></td>
-          <td><%= e.eventLocation %></td>
-          <td><%= e.addDescription %></td>
-          <td><%= e.dateOfEvent %></td>
-          <td><button class = 'button'><a href = '/events/<%=e._id%>'>Details</a></button></td>
-        </tr>
-    <%});%>
+    <% dog[0].events.forEach(function(e){%>
+      <tr>
+        <td><%= e.eventName %></td>
+        <td><%= e.eventLocation %></td>
+        <td><%= e.addDescription %></td>
+        <td><%= e.dateOfEvent %></td>
+        <td><button class = 'button'><a href = '/events/<%=e._id%>'>Details</a></button></td>
+      </tr>
+  <%});%>
   </tbody>
 </table>
 </form>
