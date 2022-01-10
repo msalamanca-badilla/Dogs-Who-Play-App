@@ -1,3 +1,4 @@
+const { eventNames } = require("../app");
 const app = require("../app");
 const Dog = require('../models/dog');
 
@@ -17,10 +18,36 @@ function myEvents(req,res,next){
   };
 
 function show(req,res,next){
-        req.user.events.findById(req.params.id, function(err, event){
-            res.render('dogs/idevent', {event}) 
-        })
-    }
+        Dog.findOne({'events._id': req.params.id}, function(err, dog) {
+          const events = dog.events.id(req.params.id);
+          console.log(events)
+          res.render('dogs/idevent', {events}) 
+    })}
+        // console.log(req.params.id)
+
+        // const dog = await Dog.aggregate({ $match: {_id: ObjectId(req.params.id)}})
+        // console.log(dog)}
+
+        // const event = await Dog.findOne({"id": req.params.id})
+    //     console.log(event)
+    // ListModel.aggregate(
+    //     { $match: {_id: ObjectId("57e6bcab6b383120f0395aed")}},
+
+    // function show(req,res,next){
+    //     Dog.findById(req.params.id, function(err,dog){
+    //         dog.events.find({dog: dog._id})
+    //     })
+    // }
+
+    // myModel.findById(myDocumentId, function (err, myDocument) {
+    //     var subDocument = myDocument.mySubdocuments.id(mySubDocumentId);
+    //   });
+
+    // console.log(req.params.id)
+    // Dog.findById(req.params.id, function(err, dog){
+    //     console.log(dog)
+    //     res.render('dogs/idevent') 
+    // })
 
 function index(req,res,next){
     Dog.find({}, function(err,events){
@@ -28,11 +55,22 @@ function index(req,res,next){
         })
 }
 
-function deleteEvent(req,res,next){
-    const id = req.params.id;
-    Dog.delete(id)
-        res.redirect('/events/myevents');
-}
+// function deleteEvent(req,res,next){
+//     const id = req.params.id;
+//     Dog.delete(id)
+//         res.redirect('/events/myevents');
+// }
+
+function deleteEvent(req, res) {
+    Dog.findOne({'events._id': req.params.id}, function(err, dog) {
+      const eventSubdoc = dog.events.id(req.params.id);
+      if (!eventSubdoc.userId.equals(req.user._id)) return res.redirect('/');
+      eventSubdoc.remove();
+      dog.save(function(err) {
+        res.redirect('/');
+      });
+    });
+  }
 
 module.exports = {
     new: newEvent,

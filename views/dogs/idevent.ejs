@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 
-<h1><%= event.eventName%></h1>
-<p class = 'eventdate'><em><%= event.dateOfEvent %></em></p>
-<p class = 'location'><em>Location: <%= event.eventLocation %></em></p>
-<p class = 'description'><%= event.addDescription %></p>
-<form action="/events/<%= event.id %>?_method=DELETE" class="delete-form" method="POST">
+<h1><%= events.eventName%></h1>
+<p class = 'eventdate'><em><%= events.dateOfEvent %></em></p>
+<p class = 'location'><em>Location: <%= events.eventLocation %></em></p>
+<p class = 'description'><%= events.addDescription %></p>
+<% if (dog._id.equals(dog && dog._id)) { %>
+<form action="/events/<%= events._id %>?_method=DELETE" class="delete-form" method="POST">
     <button type="submit">DELETE EVENT</button>
 </form>
+<% } %>
 
 <button type="submit">JOIN</button>
 

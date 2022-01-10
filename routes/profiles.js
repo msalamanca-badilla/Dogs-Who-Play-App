@@ -10,6 +10,6 @@ function isLoggedIn(req, res, next) {
 router.post('/', isLoggedIn, profilesCtrl.create);
 router.get('/adddog', profilesCtrl.newDog)
 router.get('/', profilesCtrl.myDogs);
-router.get('/:id', profilesCtrl.index);
+router.get('/:id', profilesCtrl.show);
 
 module.exports = router;

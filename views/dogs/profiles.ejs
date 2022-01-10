@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>MY DOGS</h1>
-<button class = 'button'><a href = '/profiles/adddog'>ADD DOG</a></button>
+
 
 <form action ='/profiles' method='POST'></form>
 <table class = 'dogtable' width ='600px'>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <% if (dog._id.equals(dog && dog._id)) { %>
-  <tbody>
+  <tbody class ='dogbody'>
     <% dog.profile.forEach(function(p){%>
         <tr>
           <td><a href = '/profiles/<%=p._id%>'><%= p.dogName %></a></td>
@@ -27,5 +27,7 @@
   <%};%>
 </table>
 </form>
+
+<button class = 'adddogbutton'><a href = '/profiles/adddog'>ADD DOG</a></button>
 
 <%- include('../partials/footer') %>
