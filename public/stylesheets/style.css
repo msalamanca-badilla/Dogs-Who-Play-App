@@ -12,11 +12,14 @@ body {
 }
 
 .adddog{
-  margin: 50px 0 50px 200px;
+  white-space: nowrap;
+  margin: 20px 0 50px 220px;
 }
 
 .createevent{
   margin: 50px 0 50px 100px;
+  white-space: nowrap;
+  margin: 20px 0 50px 150px;
 }
 
 label{
@@ -95,7 +98,7 @@ nav a{
 }
 
 .profile{
-  margin: 15px 0 0 45px;
+  margin: 15px 0 0 200px;
 }
 
 .google{
@@ -216,7 +219,6 @@ tbody.dogbody{
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 6; 
-  margin: 560px 0 0 60px;
   width: 60px;
   height: 20px;
 }
@@ -239,4 +241,8 @@ tbody.dogbody{
 
 .detailsbutton{
   margin: 0 0 0 65px;
+}
+
+.event{
+  margin: 15px 0 0 200px;
 }
