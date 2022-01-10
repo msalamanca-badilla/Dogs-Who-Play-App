@@ -43,12 +43,26 @@
           <% } %>
       </ul>
   </nav>
-    <form action="/dogs" method="GET" class = 'se'>
-        <!-- search -->
-        <div class="input-field">
-          <input id="search" type="search" name="name" placeholder="search name"  autocomplete="off">
+
+  <div id="dogs" class="col s12">
+    
+    <div class="card blue-grey">
+      <div class="card-content white-text">
+        <div>
+          <span class="card-title">
+            <% if (dog) { %>
+            <i class="small material-icons">perm_identity</i>
+            <span class="dog-name"><%= dog.name %></span>
+            <% } else { %>
+            <% } %>
+            <span class="dog-name"></span>
+          </span>
         </div>
-    </form>
+          <div class="card-action"></div>
+          </div>
+      </div>
+    </div>
+</div>
 
 <div class = side-nav> 
   <a href = '/events'>UPCOMING EVENTS</a>

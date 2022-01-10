@@ -23,43 +23,12 @@ function show(req,res,next){
           console.log(events)
           res.render('dogs/idevent', {events}) 
     })}
-        // console.log(req.params.id)
-
-        // const dog = await Dog.aggregate({ $match: {_id: ObjectId(req.params.id)}})
-        // console.log(dog)}
-
-        // const event = await Dog.findOne({"id": req.params.id})
-    //     console.log(event)
-    // ListModel.aggregate(
-    //     { $match: {_id: ObjectId("57e6bcab6b383120f0395aed")}},
-
-    // function show(req,res,next){
-    //     Dog.findById(req.params.id, function(err,dog){
-    //         dog.events.find({dog: dog._id})
-    //     })
-    // }
-
-    // myModel.findById(myDocumentId, function (err, myDocument) {
-    //     var subDocument = myDocument.mySubdocuments.id(mySubDocumentId);
-    //   });
-
-    // console.log(req.params.id)
-    // Dog.findById(req.params.id, function(err, dog){
-    //     console.log(dog)
-    //     res.render('dogs/idevent') 
-    // })
 
 function index(req,res,next){
     Dog.find({}, function(err,events){
         res.render('dogs/allevents', {events});
         })
 }
-
-// function deleteEvent(req,res,next){
-//     const id = req.params.id;
-//     Dog.delete(id)
-//         res.redirect('/events/myevents');
-// }
 
 function deleteEvent(req, res) {
     Dog.findOne({'events._id': req.params.id}, function(err, dog) {

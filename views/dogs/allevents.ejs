@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h1>Upcoming Events</h1>
+<h1 class = 'myevents'>Upcoming Events</h1>
 <form action ='/events' method='POST'></form>
 <table class = 'eventtable' width ='800px'>
   <thead>
@@ -20,7 +20,7 @@
         <td><%= e.addDescription %></td>
         <td><%= e.dateOfEvent %></td>
         <td><%= dog.name %></td>
-        <td><button class = 'button'><a href = '/events/<%=e._id%>'>Details</a></button></td>
+        <td><button class = 'detailsbutton'><a href = '/events/<%=e._id%>'>Details</a></button></td>
       </tr>
   <%});%>
   </tbody>

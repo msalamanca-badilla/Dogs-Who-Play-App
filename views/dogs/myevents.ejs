@@ -1,26 +1,26 @@
 <%- include('../partials/header') %>
 
-<h1>My Events</h1>
+<h1 class = 'myevents'>My Events</h1>
 <form action ='/events' method='POST'></form>
 <table class = 'eventtable' width ='600px'>
-  <thead>
+  <thead class = 'headtable'>
     <tr>
-      <th name ='Event Name' width = '100px'>Event Name</th>
-      <th name ='Event Location' width = '100px'>Event Location</th>
-      <th name ='Add Description' width = '100px'>Description</th>
-      <th name ='Date'width = '100px'>Date</th>
+      <th name ='Event Name' width = '100px' class = 'headtable'>Event Name</th>
+      <th name ='Event Location' width = '100px' class = 'headtable'>Event Location</th>
+      <th name ='Add Description' width = '100px' class = 'headtable'>Description</th>
+      <th name ='Date'width = '100px' class = 'headtable'>Date</th>
       <th>Details</th>
     </tr>
   </thead>
   <% if (dog._id.equals(dog && dog._id)) { %>
-  <tbody>
+  <tbody class = 'bodytable'>
     <% dog.events.forEach(function(e){%>
       <tr>
         <td><%= e.eventName %></td>
         <td><%= e.eventLocation %></td>
         <td><%= e.addDescription %></td>
         <td><%= e.dateOfEvent %></td>
-        <td><button class = 'button'><a href = '/events/<%=e._id%>'>Details</a></button></td>
+        <td><button class = 'detailsbutton'><a href = '/events/<%=e._id%>'>Details</a></button></td>
       </tr>
   <%});%>
   </tbody>

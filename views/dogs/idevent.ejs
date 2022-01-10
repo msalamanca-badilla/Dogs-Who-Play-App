@@ -1,15 +1,17 @@
 <%- include('../partials/header') %>
 
-<h1><%= events.eventName%></h1>
+<h1 class = 'eventname'><%= events.eventName %></h1>
 <p class = 'eventdate'><em><%= events.dateOfEvent %></em></p>
+    <div id = 'profilepic'></div>
 <p class = 'location'><em>Location: <%= events.eventLocation %></em></p>
 <p class = 'description'><%= events.addDescription %></p>
+
 <% if (dog._id.equals(dog && dog._id)) { %>
 <form action="/events/<%= events._id %>?_method=DELETE" class="delete-form" method="POST">
     <button type="submit">DELETE EVENT</button>
 </form>
 <% } %>
 
-<button type="submit">JOIN</button>
+<button type="submit" class = 'join'>JOIN</button>
 
 <%- include('../partials/footer') %>
