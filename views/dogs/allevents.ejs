@@ -9,7 +9,6 @@
       <th name ='Add Description' width = '100px'>Description</th>
       <th name ='Date'width = '100px'>Date</th>
       <th name ='Host'width = '100px'>Host</th>
-      <th>Details</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +19,6 @@
         <td><%= e.addDescription %></td>
         <td><%= e.dateOfEvent %></td>
         <td><%= dog.name %></td>
-        <td><button class = 'detailsbutton'><a href = '/events/<%=e._id%>'>Details</a></button></td>
       </tr>
   <%});%>
   </tbody>

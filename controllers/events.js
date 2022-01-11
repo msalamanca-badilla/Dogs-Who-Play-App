@@ -56,6 +56,12 @@ function update(req,res){
     }
   )}
 
+function showUpdate(req,res){
+        Dog.findOne({'events._id': req.params.id}, function(err, dog) {
+          const events = dog.events.id(req.params.id);
+          res.render('dogs/updateevent', {events}) 
+    })}
+
 module.exports = {
     new: newEvent,
     create,
@@ -64,5 +70,6 @@ module.exports = {
     delete: deleteEvent,
     index,
     update,
-    friendsEvents
+    friendsEvents,
+    showUpdate
 }

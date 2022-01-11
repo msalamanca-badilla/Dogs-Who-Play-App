@@ -16,5 +16,6 @@ router.get('/', eventsCtrl.index);
 router.post('/', isLoggedIn, eventsCtrl.friendsEvents);
 
 router.put('/:id', eventsCtrl.update);
+router.get('/:id/updateevent', eventsCtrl.showUpdate);
 	
 module.exports = router;

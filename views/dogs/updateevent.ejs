@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOGS WHO PLAY</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../stylesheets/style.css" />
+</head>
+<body>
+  <nav class="top-navbar">
+        <li id="main">
+          <a href="/dogs">DOGS WHO PLAY</a>
+        </li>
+            <% if (dog) { %>
+        <li class="nav-link">
+          <a href="/events/new">CREATE AN EVENT</a>
+        </li>
+            <% } else { %>
+          <a href="#"></a>
+            <% } %>
+
+            <% if (dog) { %>
+        <li class="nav-link">
+          <a href="/events/myevents">MY EVENTS</a>
+        </li>
+            <% } else { %>
+              <a href="#"></a>
+            <% } %>
+
+            <% if (dog) { %>
+        <li class="nav-link" >
+          <a href="/friends">FRIENDS</a>
+        </li>
+          <% } else { %>
+            <a href="#"></a>
+          <% } %>
+
+          <% if (dog) { %>
+        <li class="nav-link">
+          <a href="/profiles">MY PROFILE</a>
+        </li>
+          <% } else { %>
+            <a href="#"></a>
+          <% } %>
+      </ul>
+  </nav>
+
+  <div id="dogs" class="col s12">
+    
+    <div class="card blue-grey">
+      <div class="card-content white-text">
+        <div>
+          <span class="card-title">
+            <% if (dog) { %>
+            <i class="small material-icons">perm_identity</i>
+            <span class="dog-name"><%= dog.name %></span>
+            <% } else { %>
+            <% } %>
+            <span class="dog-name"></span>
+          </span>
+        </div>
+          <div class="card-action"></div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class = side-nav> 
+  <a href = '/events'>UPCOMING EVENTS</a>
+  <br>
+  ALL BREEDS
+    <ul class = 'breeds'>
+        <li>affenpinscher</li>
+        <li>african</li>
+        <li>airedale</li>
+        <li>akita</li>
+        <li>appenzeller</li>
+        <li>australian shepherd</li>
+        <li>basenji</li>
+        <li>beagle</li>
+        <li>bluetick</li>
+        <li>borzoi</li>
+        <li>bouvier</li>
+        <li>boxer</li>
+        <li>brabancon</li>
+        <li>briard</li>
+        <li>buhund</li>
+        <li>norwegian</li>
+        <li>french bulldog</li>
+        <li>english bulldog</li>
+        <li>bull terrier</li>
+        <li>cattledog</li>
+        <li>chihuahua</li>
+        <li>chow</li>
+        <li>cockapoo</li>
+        <li>border collie</li>
+        <li>corgi</li>
+        <li>dachshund</li>
+        <li>dalmatian</li>
+        <li>doberman</li>
+        <li>frise bichon</li>
+        <li>german shepherd</li>
+        <li>german pinscher</li>
+        <li>great dane</li>
+        <li>havanese</li>
+        <li>hound</li>
+        <li>husky</li>
+        <li>italian greyhound</li>
+        <li>labradoodle</li>
+        <li>labrador</li>
+        <li>malamute</li>
+        <li>malinois</li>
+        <li>maltese</li>
+        <li>mastiff</li>
+        <li>mountain</li>
+        <li>newfoundland</li>
+        <li>papillon</li>
+        <li>pekinese</li>
+        <li>pembroke</li>
+        <li>pomeranian</li>
+        <li>poodle</li>
+        <li>pug</li>
+        <li>pyrenees</li>
+        <li>retriever</li>
+        <li>rhodesian ridgeback</li>
+        <li>rottweiler</li>
+        <li>schnauzer</li>
+        <li>sheepdog</li>
+        <li>shiba</li>
+        <li>shihtzu</li>
+        <li>spaniel</li>
+        <li>terrier</li>
+        <li>vizsla</li>
+        <li>waterdog</li>
+        <li>whippet</li>
+    </ul>
+</div>
+
+<form action="/events/<%= events._id %>?_method=PUT" method="POST">
+    <!-- Value attribute is being set to the comment's current text -->
+    <input name="eventName" value="<%= events.eventName %>">
+    <input name="eventLocation" value="<%= events.eventLocation %>">
+    <input name="addDescription" value="<%= events.addDescription %>">
+
+    <button type="submit">UPDATE EVENT</button>
+  </form>
+
+</body>
+</html>
+
