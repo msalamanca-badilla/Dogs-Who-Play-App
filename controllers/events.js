@@ -46,6 +46,16 @@ function deleteEvent(req, res) {
     });
   } 
 
+function update(req,res){ 
+  Dog.findOne({'events._id': req.params.id}, function(err, dog){
+    const eventsUpdate = dog.events.id(req.params.id);
+    eventsUpdate.eventName = req.body.eventName;
+    dog.save(function(err){
+      res.redirect('/events/myevents');
+      })
+    }
+  )}
+
 module.exports = {
     new: newEvent,
     create,
@@ -53,5 +63,6 @@ module.exports = {
     show,
     delete: deleteEvent,
     index,
+    update,
     friendsEvents
 }

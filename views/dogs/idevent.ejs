@@ -6,6 +6,14 @@
 <p class = 'location'><em>Location: <%= events.eventLocation %></em></p>
 <p class = 'description'><%= events.addDescription %></p>
 
+<form action="/events/<%= events._id %>?_method=PUT" method="POST">
+    <!-- Value attribute is being set to the comment's current text -->
+    <input name="eventName" value="<%= events.eventName %>">
+    <button type="submit">UPDATE EVENT</button>
+  </form>
+  
+
+
 <% if (dog) { %>
 <form action="/events/<%= events._id %>?_method=DELETE" class="delete-form" method="POST">
     <button type="submit">DELETE EVENT</button>
