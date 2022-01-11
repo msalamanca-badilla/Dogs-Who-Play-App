@@ -5,5 +5,10 @@
 <p class = 'dogage'><em><%= profiles.dogAge %> Years Old</em></p>
 <p class = 'dogdescriptionprofile'><%= profiles.dogDescription %></p>
 
-<button class = 'addfriend'>ADD FRIEND</button>
+<% if (dog) { %>
+    <div></div>
+<% } else { %>
+<a href = '/friends'><button class = 'addfriend'>ADD FRIEND</button></a>
+<% } %>
+
 <%- include('../partials/footer') %>

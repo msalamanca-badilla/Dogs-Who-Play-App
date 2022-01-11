@@ -12,15 +12,15 @@
     </tr>
   </thead>
   <tbody>
-    <% dog.events.forEach(function(e){%>
+    <% if (dog) { %>
       <tr>
-        <td><%= e.eventName %></td>
-        <td><%= e.eventLocation %></td>
-        <td><%= e.addDescription %></td>
-        <td><%= e.dateOfEvent %></td>
+        <td><%= events.eventName %></td>
+        <td><%= events.eventLocation %></td>
+        <td><%= events.addDescription %></td>
+        <td><%= events.dateOfEvent %></td>
         <td><%= dog.name %></td>
       </tr>
-  <%});%>
+  <%};%>
   </tbody>
 </table>
 </form>

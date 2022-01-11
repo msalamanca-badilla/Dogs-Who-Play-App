@@ -19,7 +19,6 @@ function myDogs(req,res,next){
   function show(req,res,next){
     Dog.findOne({'profile._id': req.params.id}, function(err, dog) {
       const profiles = dog.profile.id(req.params.id);
-      console.log(profiles)
       res.render('dogs/iddog', {profiles}) 
 })}
 module.exports = {

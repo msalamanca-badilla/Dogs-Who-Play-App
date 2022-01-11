@@ -1,17 +1,4 @@
 <%- include('../partials/header') %>
-  <nav class = 'google'>
-      <form>
-        <ul>
-          <li class = 'nav-link'>
-          <% if (user) { %>
-            <a href="/logout">Log Out</a>
-          <% } else { %>
-            <a href="/auth/google">Login with Google</a>
-          <% } %>
-          </li>
-        </ul>
-      </form>
-  </nav>
 
   <div class = 'rectangle'><img src = 'images/bull-terrier-playing.jpeg' class ='dogplaying'><div class = 'summary'>
     <h1>Dog Meetups</h1>

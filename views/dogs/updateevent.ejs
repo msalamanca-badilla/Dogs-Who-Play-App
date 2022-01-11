@@ -135,13 +135,23 @@
     </ul>
 </div>
 
-<form action="/events/<%= events._id %>?_method=PUT" method="POST">
-    <!-- Value attribute is being set to the comment's current text -->
-    <input name="eventName" value="<%= events.eventName %>">
-    <input name="eventLocation" value="<%= events.eventLocation %>">
-    <input name="addDescription" value="<%= events.addDescription %>">
+<h1 class = 'updateheader'>UPDATE EVENT</h1>
 
-    <button type="submit">UPDATE EVENT</button>
+<form class = 'update' action="/events/<%= events._id %>?_method=PUT" method="POST">
+    <label>NAME OF EVENT
+        <input class = 'inputcolor' name="eventName" placeholder="<%= events.eventName %>">
+    </label>
+            <br>
+    <label>LOCATION
+        <input class = 'inputcolor' name="eventLocation" placeholder="<%= events.eventLocation %>">
+    </label>
+            <br>
+    <label class = 'labeldescription'> DESCRIPTION
+        <input class = 'adddescription' name="addDescription" placeholder="<%= events.addDescription %>">
+    </label>
+            <br>
+            <br>
+        <button class = 'updatebutton' type="submit">UPDATE</button>
   </form>
 
 </body>

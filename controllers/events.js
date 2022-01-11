@@ -13,12 +13,6 @@ function create(req,res,next) {
     });
   }
 
-function friendsEvents(req,res,next){
-  req.user.profiles.push(req.body)
-  req.user.save(function(err) {
-    res.redirect('/events/myevents');
-  });
-}
 
 function myEvents(req,res,next){
       res.render('dogs/myevents');
@@ -50,6 +44,8 @@ function update(req,res){
   Dog.findOne({'events._id': req.params.id}, function(err, dog){
     const eventsUpdate = dog.events.id(req.params.id);
     eventsUpdate.eventName = req.body.eventName;
+    eventsUpdate.eventLocation = req.body.eventLocation;
+    eventsUpdate.addDescription = req.body.addDescription;
     dog.save(function(err){
       res.redirect('/events/myevents');
       })
@@ -62,6 +58,24 @@ function showUpdate(req,res){
           res.render('dogs/updateevent', {events}) 
     })}
 
+function joinEvent(req,res,next){ 
+  Dog.findOne({'profile._id': req.params.id}, function(err, dog){
+    const joinEvent = dog.profile.id(req.params.id);
+    joinEvent.dogName = req.body.joinEvent;
+    dog.save(function(err){
+      res.redirect('/events/myevents');
+      })
+    }
+  )}
+
+// function showJoin(req,res,next){
+//   Dog.findOne({'profile._id': req.params.id}, function(err, dog) {
+    
+//     const joinName = dog.profile.id(req.params.id);
+//     res.render('dogs/myevents', {joinName}) 
+// })}
+
+
 module.exports = {
     new: newEvent,
     create,
@@ -70,6 +84,7 @@ module.exports = {
     delete: deleteEvent,
     index,
     update,
-    friendsEvents,
-    showUpdate
+    showUpdate,
+    joinEvent,
+    // showJoin
 }

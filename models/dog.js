@@ -10,6 +10,9 @@ const eventSchema = new mongoose.Schema({
           return new Date().getFullYear();
       }
     },
+  joinEvent:{
+    type: Boolean, default: false
+  }
   }, {
       timestamp: true,
   }
@@ -22,6 +25,7 @@ const profileSchema = new mongoose.Schema({
   breed: String,
   dogDescription: String,
 });
+
 
 const dogSchema = new mongoose.Schema({
     name: String,
