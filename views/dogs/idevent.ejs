@@ -6,12 +6,16 @@
 <p class = 'location'><em>Location: <%= events.eventLocation %></em></p>
 <p class = 'description'><%= events.addDescription %></p>
 
-<% if (dog._id.equals(dog && dog._id)) { %>
+<% if (dog) { %>
 <form action="/events/<%= events._id %>?_method=DELETE" class="delete-form" method="POST">
     <button type="submit">DELETE EVENT</button>
 </form>
+<% } else { %>
+    <div></div>
 <% } %>
 
-<button type="submit" class = 'join'>JOIN</button>
+
+
+
 
 <%- include('../partials/footer') %>

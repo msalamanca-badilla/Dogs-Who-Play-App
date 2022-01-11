@@ -7,7 +7,7 @@ body {
   display: grid;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  grid-template-columns: 200px 1fr 1fr 1fr;
+  grid-template-columns: 200px 400px 1fr 1fr;
   grid-template-rows: 75px 1px 1fr 1fr 1fr;
 }
 
@@ -245,4 +245,55 @@ tbody.dogbody{
 
 .event{
   margin: 15px 0 0 200px;
+}
+
+.dogprofile{
+  margin: 0 0 900px 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+}
+
+.doglocation{
+  margin: 100px 0 2000px 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4; 
+}
+
+.dogage{
+  margin: 150px 0 2000px 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4; 
+}
+
+
+.addfriend{
+  width: 200px;
+  height: 20px;
+  margin: 500px 0 900px 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+}
+
+.dogdescription{
+  padding: 50px;
+}
+
+.dogbio{
+  margin: 0 0 0 52px;
+}
+
+.dogdescriptionprofile{
+  margin: 200px 0 0 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }

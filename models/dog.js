@@ -20,6 +20,7 @@ const profileSchema = new mongoose.Schema({
   dogAge: Number,
   location: String,
   breed: String,
+  dogDescription: String,
 });
 
 const dogSchema = new mongoose.Schema({

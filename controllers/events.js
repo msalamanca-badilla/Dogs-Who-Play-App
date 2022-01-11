@@ -13,6 +13,13 @@ function create(req,res,next) {
     });
   }
 
+function friendsEvents(req,res,next){
+  req.user.profiles.push(req.body)
+  req.user.save(function(err) {
+    res.redirect('/events/myevents');
+  });
+}
+
 function myEvents(req,res,next){
       res.render('dogs/myevents');
   };
@@ -20,7 +27,6 @@ function myEvents(req,res,next){
 function show(req,res,next){
         Dog.findOne({'events._id': req.params.id}, function(err, dog) {
           const events = dog.events.id(req.params.id);
-          console.log(events)
           res.render('dogs/idevent', {events}) 
     })}
 
@@ -33,13 +39,12 @@ function index(req,res,next){
 function deleteEvent(req, res) {
     Dog.findOne({'events._id': req.params.id}, function(err, dog) {
       const eventSubdoc = dog.events.id(req.params.id);
-      if (!eventSubdoc.userId.equals(req.user._id)) return res.redirect('/');
       eventSubdoc.remove();
       dog.save(function(err) {
-        res.redirect('/');
+        res.redirect('/events/myevents');
       });
     });
-  }
+  } 
 
 module.exports = {
     new: newEvent,
@@ -47,9 +52,6 @@ module.exports = {
     myEvents,
     show,
     delete: deleteEvent,
-    index
+    index,
+    friendsEvents
 }
-
-// 61d63e74d52b64ae7029de5f
-
-// dog[0].events[0].eventName

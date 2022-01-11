@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 
-<h1><%= profiles.dogName %> - <%= profile.breed %></h1>
-<h2><%= profiles.location %></h2>
-<p><em><%= profiles.dogAge %> Years Old</em></p>
+<h1 class = 'dogprofile'><%= profiles.dogName %> - <%= profiles.breed %></h1>
+<h2 class = 'doglocation'><%= profiles.location %></h2>
+<p class = 'dogage'><em><%= profiles.dogAge %> Years Old</em></p>
+<p class = 'dogdescriptionprofile'><%= profiles.dogDescription %></p>
 
-<button class = 'button'>ADD FRIEND</button>
+<button class = 'addfriend'>ADD FRIEND</button>
 <%- include('../partials/footer') %>
