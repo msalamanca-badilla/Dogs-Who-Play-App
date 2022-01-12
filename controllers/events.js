@@ -1,4 +1,3 @@
-const { eventNames } = require("../app");
 const app = require("../app");
 const Dog = require('../models/dog');
 
@@ -7,12 +6,11 @@ function newEvent(req, res,next) {
 }
 
 function create(req,res,next) {
-    req.user.events.push(req.body);
-    req.user.save(function(err) {
-      res.redirect('/events/myevents');
-    });
-  }
-
+  req.user.events.push(req.body);
+  req.user.save(function(err) {
+    res.redirect('/events/myevents');
+  });
+}
 
 function myEvents(req,res,next){
       res.render('dogs/myevents');
@@ -23,12 +21,6 @@ function show(req,res,next){
           const events = dog.events.id(req.params.id);
           res.render('dogs/idevent', {events}) 
     })}
-
-function index(req,res,next){
-    Dog.find({}, function(err,events){
-        res.render('dogs/allevents', {events});
-        })
-}
 
 function deleteEvent(req, res) {
     Dog.findOne({'events._id': req.params.id}, function(err, dog) {
@@ -58,15 +50,12 @@ function showUpdate(req,res){
           res.render('dogs/updateevent', {events}) 
     })}
 
-function joinEvent(req,res,next){ 
-  Dog.findOne({'profile._id': req.params.id}, function(err, dog){
-    const joinEvent = dog.profile.id(req.params.id);
-    joinEvent.dogName = req.body.joinEvent;
-    dog.save(function(err){
-      res.redirect('/events/myevents');
-      })
-    }
-  )}
+function joinEvent(req,res,next){
+  req.user.profile.push(req.body);
+  req.user.save(function(err) {
+    res.redirect('/events/myevents');
+  });
+}
 
 // function showJoin(req,res,next){
 //   Dog.findOne({'profile._id': req.params.id}, function(err, dog) {
@@ -82,7 +71,6 @@ module.exports = {
     myEvents,
     show,
     delete: deleteEvent,
-    index,
     update,
     showUpdate,
     joinEvent,

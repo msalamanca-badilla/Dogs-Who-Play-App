@@ -2,30 +2,26 @@
 
 <h1 class = 'myevents'>My Events</h1>
 <form action ='/events' method='POST'></form>
-<table class = 'eventtable' width ='600px'>
-  <thead class = 'headtable'>
-    <tr>
-      <th name ='Event Name' width = '100px' class = 'headtable'>Event Name</th>
-      <th name ='Event Location' width = '100px' class = 'headtable'>Event Location</th>
-      <th name ='Add Description' width = '100px' class = 'headtable'>Description</th>
-      <th name ='Date'width = '100px' class = 'headtable'>Date</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <% if (dog._id.equals(dog && dog._id)) { %>
-  <tbody class = 'bodytable'>
-    <% dog.events.forEach(function(e){%>
+  <table class = 'eventtable'>
+    <thead class = 'headtable'>
       <tr>
-        <td><%= e.eventName %></td>
-        <td><%= e.eventLocation %></td>
-        <td><%= e.addDescription %></td>
-        <td><%= e.dateOfEvent %></td>
-        <td><button class = 'detailsbutton'><a href = '/events/<%=e._id%>'>Details</a></button></td>
+        <th name ='Event Name'  class = 'headtable'>Event Name</th>
+        <th name ='Event Location'  class = 'headtable'>Event Location</th>
+        <th name ='Date' class = 'headtable'>Date</th>
+        <th>Details</th>
       </tr>
-  <%});%>
-  </tbody>
-  <%};%>
-</table>
+    </thead>
+    <tbody>
+      <% dog.events.forEach(function(e){%>
+        <tr>
+          <td><%= e.eventName %></td>
+          <td><%= e.eventLocation %></td>
+          <td><%= e.dateOfEvent %></td>
+          <td><button class = 'detailsbutton'><a href = '/events/<%=e._id%>'>Details</a></button></td>
+        </tr>
+    <%});%>
+    </tbody>
+  </table>
 </form>
 
 

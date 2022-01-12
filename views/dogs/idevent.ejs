@@ -19,15 +19,17 @@
 <% } %> 
 
 
-<form class = 'joinform' action ='/events/<%= events._id %>'  method="POST">
+<form class = 'joinform' action ='/events/<%= events._id %>' method="POST">
     <input type="checkbox" name="joinEvent">
         <button class = 'joinbutton' type="submit">JOIN</button>
 </form>
 
-<div class = 'going'>
-    <h1>GOING</h1>
-    <div><%= dog.name ? dog.name: 'no' %></div>
-</div>
+<form class = 'going' action ='/events/<%= events._id %>' method="POST">
+    <div>
+        <h1>GOING</h1>
+        <div><%= dog.name ? dog.name: 'no' %></div>
+    </div>
+</form>
 
 
 

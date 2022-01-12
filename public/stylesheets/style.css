@@ -111,11 +111,11 @@ nav a{
 }
 
 .eventtable{
-  margin: 50px 0 900px 0;
+  margin: 50px 0 1000px 0;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 2;
-  grid-column-end: 3; 
+  grid-column-end: 4; 
 }
 
 .dogtable{
@@ -143,14 +143,14 @@ nav a{
 }
 
 .description{
-  margin: 300px 0 0 0;
+  margin: 300px 0 0 20px;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 3;
   grid-column-end: 4; 
 }
 .location{
-  margin: 250px 0 0 ;
+  margin: 250px 0 0 20px;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 3;
@@ -169,7 +169,7 @@ nav a{
 
 div.summary{
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
 }
 
@@ -179,11 +179,7 @@ div.summary{
 }
 
 .adddescription{
-  padding: 50px;
-}
-
-.labeldescription{
-  margin: 0 0 0 50px;
+  padding: 10px 16px 50px 16px;
 }
 
 .adddogbutton{
@@ -207,9 +203,9 @@ tbody.dogbody{
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 2;
-  grid-column-end: 6; 
+  grid-column-end: 3; 
   background-color:#E5E5E5;
-  width: 25%;
+  width: 100%;
   height: 40%;
   margin: 130px 0 0 0;
 }
@@ -224,11 +220,12 @@ tbody.dogbody{
 }
 
 #dogs{
-  grid-column-start: 1;
-  grid-column-end: 5; 
   grid-row-start: 1;
-  grid-row-end: 2; 
-  margin: 30px 0 0 1000px;
+  grid-column-start: 4;
+  grid-column-end: 5; 
+  text-decoration: none;
+  justify-self: start;
+  margin: 30px 0 0 100px
 }
 
 .myevents{
@@ -286,11 +283,7 @@ tbody.dogbody{
 }
 
 .dogdescription{
-  padding: 50px;
-}
-
-.dogbio{
-  margin: 0 0 0 52px;
+  padding: 10px 16px 50px 16px;
 }
 
 .dogdescriptionprofile{
@@ -324,7 +317,7 @@ tbody.dogbody{
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
-  width: 100px;
+  width: 100%;
 }
 
 .deleteform{
@@ -347,13 +340,13 @@ tbody.dogbody{
 }
 
 .joinform{
-  margin: 610px 0 0 150px;
-  width:100%;
-  height: 30px;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 3;
+  margin: 610px 0 0 81%;
+  width:100%;
+  height: 30px;
 }
 
 

@@ -44,25 +44,7 @@
       </ul>
   </nav>
 
-  <div id="dogs" class="col s12">
-    
-    <div class="card blue-grey">
-      <div class="card-content white-text">
-        <div>
-          <span class="card-title">
-            <% if (dog) { %>
-            <i class="small material-icons">perm_identity</i>
-            <span class="dog-name"><%= dog.name %></span>
-            <% } else { %>
-            <% } %>
-            <span class="dog-name"></span>
-          </span>
-        </div>
-          <div class="card-action"></div>
-          </div>
-      </div>
-    </div>
-</div>
+
 
 <div class = side-nav> 
   <a href = '/events'>UPCOMING EVENTS</a>
@@ -148,3 +130,23 @@
     </ul>
   </form>
 </nav>
+
+<div id="dogs" class="col s12">
+    
+  <div class="card blue-grey">
+    <div class="card-content white-text">
+      <div>
+        <span class="card-title">
+          <% if (dog) { %>
+          <i class="small material-icons">perm_identity</i>
+          <span class="dog-name"><%= dog.name %></span>
+          <% } else { %>
+          <% } %>
+          <span class="dog-name"></span>
+        </span>
+      </div>
+        <div class="card-action"></div>
+        </div>
+    </div>
+  </div>
+</div>

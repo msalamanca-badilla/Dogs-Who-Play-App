@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let eventsCtrl = require('../controllers/events');
+let allEventsCtrl = require('../controllers/allevents');
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
@@ -8,12 +9,12 @@ function isLoggedIn(req, res, next) {
   }
 	
 router.get('/new', eventsCtrl.new);
-router.post('/', isLoggedIn, eventsCtrl.create);
+router.post('/', allEventsCtrl.create, eventsCtrl.create);
 router.get('/myevents', eventsCtrl.myEvents);
 router.get('/:id', eventsCtrl.show);
 router.delete('/:id', isLoggedIn, eventsCtrl.delete);
-router.get('/', eventsCtrl.index);
-router.post('/', isLoggedIn, eventsCtrl.joinEvent);
+router.get('/', allEventsCtrl.index);
+router.post('/', eventsCtrl.joinEvent);
 router.put('/:id', eventsCtrl.update);
 router.get('/:id/updateevent', eventsCtrl.showUpdate);
 // router.get('/:id', eventsCtrl.showJoin);
