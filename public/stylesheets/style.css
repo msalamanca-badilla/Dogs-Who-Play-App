@@ -5,7 +5,7 @@
 }
 body {
   display: grid;
-  padding: 50px;
+  padding: 50px 200px 50px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   grid-template-columns: 200px 400px 1fr 1fr;
   grid-template-rows: 75px 1px 1fr 1fr 1fr;
@@ -174,6 +174,10 @@ div.summary{
 }
 
 .dogplaying{
+  margin: 20px;
+  border: 1px solid white;
+  outline: 4px solid white;
+  outline-offset: 30px;
   height: 70%;
   margin: 80px 0 0 70px;
 }

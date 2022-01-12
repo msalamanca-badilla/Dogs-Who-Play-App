@@ -9,14 +9,16 @@ function isLoggedIn(req, res, next) {
   }
 	
 router.get('/new', eventsCtrl.new);
-router.post('/', allEventsCtrl.create, eventsCtrl.create);
+router.post('/', isLoggedIn, allEventsCtrl.create, eventsCtrl.create);
 router.get('/myevents', eventsCtrl.myEvents);
 router.get('/:id', eventsCtrl.show);
 router.delete('/:id', isLoggedIn, eventsCtrl.delete);
-router.get('/', allEventsCtrl.index);
-router.post('/', eventsCtrl.joinEvent);
 router.put('/:id', eventsCtrl.update);
 router.get('/:id/updateevent', eventsCtrl.showUpdate);
-// router.get('/:id', eventsCtrl.showJoin);
+
+
+router.get('/', allEventsCtrl.index);
+
+
 
 module.exports = router;

@@ -50,21 +50,6 @@ function showUpdate(req,res){
           res.render('dogs/updateevent', {events}) 
     })}
 
-function joinEvent(req,res,next){
-  req.user.profile.push(req.body);
-  req.user.save(function(err) {
-    res.redirect('/events/myevents');
-  });
-}
-
-// function showJoin(req,res,next){
-//   Dog.findOne({'profile._id': req.params.id}, function(err, dog) {
-    
-//     const joinName = dog.profile.id(req.params.id);
-//     res.render('dogs/myevents', {joinName}) 
-// })}
-
-
 module.exports = {
     new: newEvent,
     create,
@@ -73,6 +58,4 @@ module.exports = {
     delete: deleteEvent,
     update,
     showUpdate,
-    joinEvent,
-    // showJoin
 }
