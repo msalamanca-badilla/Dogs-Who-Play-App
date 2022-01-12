@@ -17,7 +17,7 @@
   <tbody class ='dogbody'>
     <% dog.profile.forEach(function(p){%>
         <tr>
-          <td><a href = '/profiles/<%=p._id%>'><%= p.dogName %></a></td>
+          <td class = 'dogname'><a href = '/profiles/<%=p._id%>'><%= p.dogName %></a></td>
           <td><%= p.location %></td>
           <td><%= p.dogAge %></td>
           <td><%= p.breed %></td>

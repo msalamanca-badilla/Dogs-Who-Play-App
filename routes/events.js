@@ -12,7 +12,7 @@ router.get('/new', eventsCtrl.new);
 router.post('/', isLoggedIn, allEventsCtrl.create, eventsCtrl.create);
 router.get('/myevents', eventsCtrl.myEvents);
 router.get('/:id', eventsCtrl.show);
-router.delete('/:id', isLoggedIn, eventsCtrl.delete);
+router.delete('/:id', isLoggedIn, allEventsCtrl.delete, eventsCtrl.delete);
 router.put('/:id', eventsCtrl.update);
 router.get('/:id/updateevent', eventsCtrl.showUpdate);
 

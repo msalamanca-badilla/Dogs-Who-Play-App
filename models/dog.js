@@ -7,7 +7,7 @@ const eventSchema = new mongoose.Schema({
   dateOfEvent:{
       type: Date,
       default(){
-          return new Date().getFullYear();
+        return new Date().toString();
       }
     },
   joinEvent:{
