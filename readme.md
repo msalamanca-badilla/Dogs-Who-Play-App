@@ -5,6 +5,7 @@
 - Click the link above to get started
 
 ![](/public/images/login.png)
+![](/public/images/logout.png)
 
 ## Technology
 - MongoDB
