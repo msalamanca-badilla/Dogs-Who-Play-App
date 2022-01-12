@@ -4,7 +4,7 @@
 [DOGS WHO PLAY](https://pages.git.generalassemb.ly/msalamanca/Snake-Game/)
 - Click the link above to get started
 
-![](login.png)
+![](images/login.png)
 
 ## Technology
 - MongoDB
