@@ -169,10 +169,11 @@ nav a{
   height: 500px;
 }
 
-div.summary{
+.summary{
   position: absolute;
-  top: 30%;
-  left: 50%;
+  display: inline-block;
+  margin: 150px 0 0 50px;
+  width: 350px;
 }
 
 .dogplaying{
@@ -180,7 +181,7 @@ div.summary{
   border: 1px solid white;
   outline: 4px solid white;
   outline-offset: 30px;
-  height: 70%;
+  width: 50%;
   margin: 80px 0 0 70px;
 }
 
@@ -386,4 +387,8 @@ tbody.dogbody{
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.dogmeetup{
+
 }

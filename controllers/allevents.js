@@ -17,9 +17,14 @@ function create(req,res,next) {
 } 
 
 function deleteEvent(req, res,next) {
-    Event.deleteOne(req.params.id)
-        next()
-      };
+  Event.findOne(req.params.id, function(err) {
+    console.log(req.params.id)
+    Event.remove();
+    console.log({Event})
+      next()
+    
+  });
+} 
 
 module.exports = {
     create,
