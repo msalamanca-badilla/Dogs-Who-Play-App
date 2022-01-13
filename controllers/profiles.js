@@ -8,7 +8,7 @@ function newDog(req,res,next){
 function create(req,res,next){
     req.user.profile.push(req.body);
     req.user.save(function(err) {
-      res.redirect('/profiles');
+      res.redirect('/profiles/mydogs');
     });
 }
 

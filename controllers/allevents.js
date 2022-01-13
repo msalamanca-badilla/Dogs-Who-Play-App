@@ -8,7 +8,6 @@ function create(req,res,next) {
     allEvent.save(function (err) {
       next()
     });
-    
   }
 
   function index(req,res,next){
@@ -21,8 +20,6 @@ function deleteEvent(req, res,next) {
     Event.deleteOne(req.params.id)
         next()
       };
-
-
 
 module.exports = {
     create,
