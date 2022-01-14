@@ -11,16 +11,19 @@
       <th name ='Location' width = '100px'>Location</th>
       <th name ='Age' width = '100px'>Age</th>
       <th name ='Breed'width = '100px'>Breed</th>
+      <th></th>
     </tr>
   </thead>
   <% if (dog._id.equals(dog && dog._id)) { %>
   <tbody class ='dogbody'>
     <% dog.profile.forEach(function(p){%>
         <tr>
-          <td class = 'dogname'><a href = '/profiles/<%=p._id%>'><%= p.dogName %></a></td>
+          <td><%= p.dogName %></td>
           <td><%= p.location %></td>
           <td><%= p.dogAge %></td>
           <td><%= p.breed %></td>
+          <td><%= p.breed %></td>
+          <td><button class = 'detailsbutton'><a href = '/profiles/<%=p._id%>'>Profile Page</a></button></td>
         </tr>
     <%});%>
   </tbody>
