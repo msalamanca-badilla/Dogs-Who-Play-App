@@ -17,10 +17,8 @@ function create(req,res,next) {
 } 
 
 function deleteEvent(req, res,next) {
-  Event.findOne(req.params.id, function(err) {
+  Event.findOneAndDelete(req.params.id, function(err) {
     console.log(req.params.id)
-    Event.remove();
-    console.log({Event})
       next()
     
   });
