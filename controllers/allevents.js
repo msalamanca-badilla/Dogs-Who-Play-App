@@ -16,16 +16,7 @@ function create(req,res,next) {
         })
 } 
 
-function deleteEvent(req, res,next) {
-  Event.findOneAndDelete(req.params.id, function(err) {
-    console.log(req.params.id)
-      next()
-    
-  });
-} 
-
 module.exports = {
     create,
     index,
-    delete: deleteEvent,
 }

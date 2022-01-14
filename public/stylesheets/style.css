@@ -172,17 +172,17 @@ nav a{
 .summary{
   position: absolute;
   display: inline-block;
-  margin: 150px 0 0 50px;
+  margin: 150px 0 0 5%;
   width: 350px;
 }
 
 .dogplaying{
-  margin: 20px;
+
   border: 1px solid white;
   outline: 4px solid white;
   outline-offset: 30px;
-  width: 50%;
-  margin: 80px 0 0 70px;
+  width: 40%;
+  margin: 80px 0 0 15%;
 }
 
 .adddescription{
@@ -255,7 +255,7 @@ tbody.dogbody{
 }
 
 .dogprofile{
-  margin: 0 0 900px 0;
+  margin: 0;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-column-start: 2;
@@ -327,7 +327,7 @@ tbody.dogbody{
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
-  width: 100%;
+  width: 50%;
 }
 
 .deleteform{
@@ -342,11 +342,17 @@ tbody.dogbody{
 }
 
 .deletebutton{
+  margin: 0 0 0 25%;
+  width:50%;
+  height: 30px;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3; 
   background-color: white;
-  border-radius: 5px;
   border: 1px solid black;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .joinform{
@@ -359,14 +365,6 @@ tbody.dogbody{
   height: 30px;
 }
 
-
-.joinbutton{
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
-  font-weight: bold;
-}
 
 .going{
   margin: 100px 0 0 ;
@@ -389,6 +387,15 @@ tbody.dogbody{
   border-radius: 5px;
 }
 
-.dogmeetup{
-
+.dot {
+  margin: 15% 0 890px 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+  height: 15%;
+  width: 78%;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
 }

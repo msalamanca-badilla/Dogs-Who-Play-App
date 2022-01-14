@@ -22,7 +22,7 @@ function show(req,res,next){
           res.render('dogs/idevent', {events}) 
     })}
 
-function deleteEvent(req, res, next) {
+function deleteEvent(req, res) {
     Dog.findOne({'events._id': req.params.id}, function(err, dog) {
       const eventSubdoc = dog.events.id(req.params.id);
       eventSubdoc.remove();
