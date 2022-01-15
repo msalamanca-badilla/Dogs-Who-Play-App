@@ -37,7 +37,6 @@ function update(req,res){
     const eventsUpdate = dog.events.id(req.params.id);
     eventsUpdate.eventName = req.body.eventName;
     eventsUpdate.eventLocation = req.body.eventLocation;
-    eventsUpdate.dateOfEvent = req.body.dateOfEvent;
     eventsUpdate.addDescription = req.body.addDescription;
     dog.save(function(err){
       res.redirect('/events/myevents');
