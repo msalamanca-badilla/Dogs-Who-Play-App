@@ -45,6 +45,10 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  openTo: {
+    type: String,
+    required: true,
+  },
   dogDescription: {
     type: String,
     required: true,

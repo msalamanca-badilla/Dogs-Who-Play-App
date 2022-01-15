@@ -1,12 +1,13 @@
 <%- include('../partials/header') %>
 <h1 class = 'myevents'>Upcoming Events</h1>
 <form action ='/events' method='POST'></form>
-<table class = 'eventtable' width ='600px'>
+<table class = 'eventtable' width ='1000px'>
   <thead>
     <tr>
-      <th name ='Event Name' width = '200px'>Event Name</th>
-      <th name ='Event Location' width = '200px'>Event Location</th>
+      <th name ='Event Name' width = '100px'>Event Name</th>
+      <th name ='Event Location' width = '100px'>Event Location</th>
       <th name ='Date'width = '500px'>Date</th>
+      <th name ='openTo'width = '500px'>Date</th>
       <th></th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
               <td><%= e.eventName %></td>
               <td><%= e.eventLocation %></td>
               <td><%= e.dateOfEvent %></td>
+              <td><%= e.openTo %></td>
           <% }) %>
       </tr>
   
