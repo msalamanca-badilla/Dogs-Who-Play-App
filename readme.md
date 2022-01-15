@@ -17,7 +17,7 @@ This application uses full CRUD operation and was created using MEN stack with u
 - Node.js
 - OAuth2
 
-[Trello Board](https://trello.com/b/Y0n3JZ4Y/dogs-who-play-app)
+[Trello Board](https://trello.com/b/Y0n3JZ4Y/dogs-who-play-app)\
 [Figma Wireframe](https://www.figma.com/file/FOQiglntOMnVkEtBf5uSVO/Dogs-Who-Play-App?node-id=77%3A432)
 
 ## Future Enhancements
