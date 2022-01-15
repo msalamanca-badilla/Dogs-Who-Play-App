@@ -1,7 +1,7 @@
 # DOGS WHO PLAY APPLICATION
 
 ## Getting Started
-[DOGS WHO PLAY](https://pages.git.generalassemb.ly/msalamanca/Snake-Game/)
+[DOGS WHO PLAY](https://dogs-who-play.herokuapp.com/dogs)
 - Click the link above to get started
 
 Dogs Who Play is an app that allows the user to login, create a profile for their dog and create events. The user will also be able to see events and dog profiles creates by other users.
