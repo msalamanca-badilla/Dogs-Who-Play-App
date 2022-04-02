@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-WORK IN PROGRESS
+**WORK IN PROGRESS**
 
 [DOGS WHO PLAY](https://dogs-who-play.herokuapp.com/dogs)
 - Click the link above to get started
