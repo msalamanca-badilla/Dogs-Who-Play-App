@@ -1,59 +1,11 @@
 var mongoose = require('mongoose');
-
-const eventSchema = new mongoose.Schema({
-  eventName: {
-    type: String,
-    required: true,
-  },
-  eventLocation: {
-    type: String,
-    required: true,
-  },
-  addDescription: {
-    type: String,
-    required: true,
-  },
-  dateOfEvent:{
-      type: Date,
-      require: true,
-      default(){
-        return new Date().toString();
-      }
-    },
-  }, {
-      timestamp: true,
-  }
-);
-
-const profileSchema = new mongoose.Schema({
-  dogName: {
-    type: String,
-    required: true,
-  },
-  dogAge: {
-    type: Number,
-    required: true,
-  },
-  location: {
-    type: String,
-    required: true,
-  },
-  breed: {
-    type: String,
-    required: true,
-  },
-  dogDescription: {
-    type: String,
-    required: true,
-  },
-});
-
+const Schema = mongoose.Schema
 
 const dogSchema = new mongoose.Schema({
     name: String,
     email: String,
-    events: [eventSchema],
-    profile: [profileSchema],
+    events: {type: Schema.Types.ObjectId, ref:'Event'},
+    profile: {type: Schema.Types.ObjectId, ref: 'Profile'},
     googleId: String
   }, {
     timestamps: true

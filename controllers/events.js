@@ -1,5 +1,6 @@
 const app = require("../app");
 const Dog = require('../models/dog');
+const Event = require('../models/events');
 
 function newEvent(req, res,next) {
     res.render('dogs/events')
@@ -17,23 +18,24 @@ function myEvents(req,res,next){
   };
 
 function show(req,res,next){
-        Dog.findOne({'events._id': req.params.id}, function(err, dog) {
+  Event.findOne({'events._id': req.params.id}, function(err, dog) {
           const events = dog.events.id(req.params.id);
           res.render('dogs/idevent', {events}) 
     })}
 
 function deleteEvent(req, res) {
-    Dog.findOne({'events._id': req.params.id}, function(err, dog) {
-      const eventSubdoc = dog.events.id(req.params.id);
-      eventSubdoc.remove();
-      dog.save(function(err) {
-        res.redirect('/events/myevents');
-      });
-    });
-  } 
+  Event.findByIdAndDelete(req.params.id)
+  .then(post => {
+      res.redirect('/events/myevents')
+  })
+  .catch(err => {
+      console.log(err)
+      res.redirect('/events/myevents')
+  })
+} 
 
 function update(req,res){ 
-  Dog.findOne({'events._id': req.params.id}, function(err, dog){
+  Event.findOne({'events._id': req.params.id}, function(err, dog){
     const eventsUpdate = dog.events.id(req.params.id);
     eventsUpdate.eventName = req.body.eventName;
     eventsUpdate.eventLocation = req.body.eventLocation;
@@ -45,10 +47,17 @@ function update(req,res){
   )}
 
 function showUpdate(req,res){
-        Dog.findOne({'events._id': req.params.id}, function(err, dog) {
+  Event.findOne({'events._id': req.params.id}, function(err, dog) {
           const events = dog.events.id(req.params.id);
           res.render('dogs/updateevent', {events}) 
     })}
+
+function allEvents(req,res){
+  Event.find({}){
+    res.render('allevents')
+  }
+}
+
 
 module.exports = {
     new: newEvent,
@@ -58,4 +67,5 @@ module.exports = {
     delete: deleteEvent,
     update,
     showUpdate,
+    allEvents,
 }
