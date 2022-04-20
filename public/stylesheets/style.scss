@@ -1,7 +1,10 @@
+$font-color: black;
+$border-style: 1px solid black;
+
 * {
     box-sizing: border-box;
     font-family: Helvetica;
-    color: black;
+    color: $font-color;
   }
   body {
     display: grid;
@@ -35,7 +38,7 @@
   .button{
     margin: 0 0 0 200px;
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
     
   }
@@ -65,7 +68,7 @@
   }
   
   a{
-    color: black;
+    color: $font-color;
     display: inline;
     text-decoration: none;
     font-weight: bold;
@@ -198,7 +201,7 @@
     grid-column-start: 2;
     grid-column-end: 3; 
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
   }
   
@@ -246,7 +249,7 @@
   .detailsbutton{
     margin: 0 0 0 0;
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
   }
   
@@ -288,7 +291,7 @@
     grid-column-start: 2;
     grid-column-end: 3; 
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
   }
   
@@ -325,7 +328,7 @@
   .updatebutton{
     margin: 0 0 0 200px;
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
     width: 50%;
   }
@@ -350,7 +353,7 @@
     grid-column-start: 2;
     grid-column-end: 3; 
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
     font-weight: 700;
   }
