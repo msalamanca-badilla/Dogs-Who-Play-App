@@ -25,7 +25,7 @@ function show(req,res,next){
 
 function deleteEvent(req, res) {
   Event.findByIdAndDelete(req.params.id)
-  .then(post => {
+  .then(event => {
       res.redirect('/events/myevents')
   })
   .catch(err => {
@@ -53,9 +53,8 @@ function showUpdate(req,res){
     })}
 
 function allEvents(req,res){
-  Event.find({}){
+  Event.find({})
     res.render('allevents')
-  }
 }
 
 
