@@ -60,6 +60,10 @@ $border-style: 1px solid black;
     height: 50px;
     font-weight: bold;
     margin: 10px 0 0 0;
+    
+    a{
+      text-decoration: none;
+    }
   }
   
   .container{
@@ -94,10 +98,6 @@ $border-style: 1px solid black;
     list-style: none;
     display: inline;
     margin: 0 0 0 20px;
-  }
-  
-  nav a{
-    text-decoration: none;
   }
   
   .profile{

@@ -58,6 +58,9 @@ nav {
   font-weight: bold;
   margin: 10px 0 0 0;
 }
+nav a {
+  text-decoration: none;
+}
 
 .container {
   grid-row-start: 2;
@@ -91,10 +94,6 @@ li.nav-link {
   list-style: none;
   display: inline;
   margin: 0 0 0 20px;
-}
-
-nav a {
-  text-decoration: none;
 }
 
 .profile {
