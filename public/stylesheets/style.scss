@@ -110,7 +110,7 @@ $border-style: 1px solid black;
     grid-column-end: 5; 
     text-decoration: none;
     justify-self: start;
-    margin: 0 0 0 100px
+    margin: 0 0 0 100px;
   }
   
   .eventtable{
@@ -180,7 +180,6 @@ $border-style: 1px solid black;
   }
   
   .dogplaying{
-  
     border: 1px solid white;
     outline: 4px solid white;
     outline-offset: 30px;
@@ -247,7 +246,6 @@ $border-style: 1px solid black;
   }
   
   .detailsbutton{
-    margin: 0 0 0 0;
     background-color: white;
     border: $border-style;
     border-radius: 5px;
@@ -386,7 +384,7 @@ $border-style: 1px solid black;
     grid-column-start: 2;
     grid-column-end: 3; 
     background-color: white;
-    border: 1px solid black;
+    border: $border-style;
     border-radius: 5px;
   }
   
