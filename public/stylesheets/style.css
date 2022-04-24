@@ -179,7 +179,7 @@ nav a{
 .dogplaying{
 
   border: 1px solid white;
-  outline: 4px solid white;
+  outline: 4px solid black;
   outline-offset: 30px;
   width: 40%;
   margin: 80px 0 0 15%;
